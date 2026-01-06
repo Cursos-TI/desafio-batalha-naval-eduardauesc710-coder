@@ -33,6 +33,25 @@ int main() {
             tabuleiro[1][j] = 3;
         }
 
+        // Colocando navios diagonais
+        // 3 posições - LINHAS e coluna 1 a 3
+        for(i=0; i<=2; i++){
+            for(j=0; j<=2; j++){
+                if(i == j){
+                    tabuleiro[i][j]=3;
+                }
+            }
+        }
+
+        // 3 posições - LINHAS 8 a 10 / COLUNAS 1 A 3
+        for(i=7; i<=9; i++){
+            for(j=0; j<=2; j++){
+                if(i + j == 9){
+                    tabuleiro[i][j]=3;
+                }
+            }
+        }
+
         
         // Exibindo meu tabuleiro
         
@@ -62,10 +81,6 @@ int main() {
 
 
 
-    // Nível Novato - Posicionamento dos Navios
-    // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
-    // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
-    // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
 
     // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
     // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
