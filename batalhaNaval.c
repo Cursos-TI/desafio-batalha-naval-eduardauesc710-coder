@@ -19,7 +19,7 @@ int main() {
             }
         }
 
-        // Colocando o navio vertical
+        /*Colocando o navio vertical
         // 3 posições - Coluna 4, linhas 5, 6 e 7
 
         for(i=4; i<=6; i++){
@@ -51,6 +51,72 @@ int main() {
                 }
             }
         }
+        */
+
+        // Montando o cone nas linhas 1 a 3, colunas A a E
+
+
+
+        for(i=0; i<=2; i++){
+            int jmax = 4;
+            for(j=0 ;j<=4; j++){
+                if(j >= (jmax/2 -i) && j<= (jmax/2+i)){
+                    tabuleiro[i][j] = 1;
+                }
+            }
+        }
+
+        // montando a cruz nas linhas 3 a 5 e colunas F a J
+
+        int jmax = 9, jmin = 5, imax = 4, imin = 2;
+
+        for(i=imin; i<=imax; i++){
+            for(j=jmin ;j<=jmax; j++){
+                if(j == (jmin + (jmax-jmin)/2) || i == (imax - (imax-imin)/2)){
+                    tabuleiro[i][j] = 2;
+                } 
+            }
+        }
+
+         // montando o octaedro nas linhas 6, 7 e 8 e colunas A a 5
+         int linhas = 3, meio;
+            meio = linhas/2;
+
+         for(i=0; i<= meio ; i++){
+            int jmax = 4, imin = 5, imax= 7;
+            for(j=0 ;j<=4; j++){
+                if(j >= (jmax/2 -i) && (j<= (jmax/2+i))){
+                    tabuleiro[i+imin][j] = 3;
+                }
+            }
+        }
+        
+        for(i=meio-1; i==0 ; i--){
+            int jmax = 4, imin = 5, imax= 7;
+            for(j=0 ;j<=4; j++){
+                if(j >= (jmax/2 -i) && (j<= (jmax/2+i))){
+                    tabuleiro[i+imin+(meio+1)][j] = 3;
+                }
+            }
+        }
+
+         
+
+         
+        
+         
+         
+         
+
+        
+
+
+
+        
+        
+
+
+
 
         
         // Exibindo meu tabuleiro
@@ -70,43 +136,8 @@ int main() {
             printf("\n");
         }
     
-    
 
-
-        
-
-
-
-
-
-
-
-
-    // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
-    // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
-    // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
-    // Sugestão: Exiba o tabuleiro completo no console, mostrando 0 para posições vazias e 3 para posições ocupadas.
-
-    // Nível Mestre - Habilidades Especiais com Matrizes
-    // Sugestão: Crie matrizes para representar habilidades especiais como cone, cruz, e octaedro.
-    // Sugestão: Utilize estruturas de repetição aninhadas para preencher as áreas afetadas por essas habilidades no tabuleiro.
-    // Sugestão: Exiba o tabuleiro com as áreas afetadas, utilizando 0 para áreas não afetadas e 1 para áreas atingidas.
-
-    // Exemplos de exibição das habilidades:
-    // Exemplo para habilidade em cone:
-    // 0 0 1 0 0
-    // 0 1 1 1 0
-    // 1 1 1 1 1
-    
-    // Exemplo para habilidade em octaedro:
-    // 0 0 1 0 0
-    // 0 1 1 1 0
-    // 0 0 1 0 0
-
-    // Exemplo para habilidade em cruz:
-    // 0 0 1 0 0
-    // 1 1 1 1 1
-    // 0 0 1 0 0
+    // Preciso melhorar o programa para que ele se aplique a outras linhas e colunas
 
     return 0;
 }
